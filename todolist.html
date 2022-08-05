@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="UTF-8">
+      <title>Page of To do List</title>
+
+      <style>
+        body {
+            font-family: Arial;
+        }
+        #to-do-list{
+            width: 400px;
+            background: #2e3d49;
+            padding: 10px 20px;
+            border-radius:10px;
+            margin: 0 auto;
+        }
+
+        .letrasblancas {
+            color:white;
+        }
+        .tituloslista{
+            text-decoration: underline;
+            font-size: 20px;
+        }
+        .lista{
+            line-height: 24px;
+        }
+        li {
+            cursor:pointer;
+        }
+        li:hover {
+           color:white;            
+        }
+
+        .lichecked{
+          color:darksalmon;
+          text-decoration:line-through;
+        }
+        .liunchecked{
+          color:greenyellow;
+          text-decoration:none;
+        }
+      </style>
+    </head>
+    <body>
+      <div id="to-do-list">
+
+        <h1 class="letrasblancas">Lista de Tareas Simple</h1>
+      
+        <h2 class="letrasblancas tituloslista">Tareas del Hogar</h2>
+        <ul class="lista" id="lista1">
+             <li class="liunchecked">Lavar los Platos</li>
+             <li class="liunchecked">Tender la Cama</li>
+             <li class="liunchecked">Tirar la Basura</li>
+             <li class="liunchecked">Organizar el cuarto</li>
+        </ul>    
+
+        <h2 class="letrasblancas tituloslista">Tareas de Estudio</h2>
+        <ul class="lista" id="lista2">
+           <li class="liunchecked">Hacer la tormenta de ideas para el proyecto de desarollo</li>
+           <li class="liunchecked">resover los problemas de matematicas</li>
+           <li class="liunchecked">estudiar para el examen de programacion</li>
+           <li class="liunchecked">Terminar el website freelance</li>
+           <li class="liunchecked">Estudiar Ingles</li>
+           <li class="liunchecked">Leer dos capitulos del libro el Arte de la Guerra</li>
+        </ul>    
+
+        <h2 class="letrasblancas tituloslista">Tareas para la Fiesta</h2>
+        <ul class="lista" id="lista3">
+           <li class="liunchecked">Enviar la invitaciones</li>
+           <li class="liunchecked">Reservar la sala de fiesta en el Restaurante</li>
+           <li class="liunchecked">Ordenar el Pastel</li>
+        </ul>   
+
+     </div>
+
+     <script>
+        var array = [];
+        
+        array.push(document.getElementById("lista1"));
+        array.push(document.getElementById("lista2"));
+        array.push(document.getElementById("lista3"));
+
+        for(var i = 0; i < array.length; i++){
+          array[i].addEventListener('click', function(e) {
+            if (e.target.tagName == 'LI') {
+              e.target.classList == "liunchecked" ? e.target.className = "lichecked" : e.target.className = "liunchecked";
+          } 
+        });
+        }
+        
+     </script>
+
+    </body>
+</html>
